@@ -9,4 +9,8 @@ CREATE TABLE `event`
 ) ENGINE=InnoDB COMMENT='イベント';
 
 INSERT INTO `event` (`event_id`, `name`, `explanation`)
-VALUES (1, 'labolevent', 'イベントです');
+VALUES (1, 'セレスライブイベント', 'セレスイベントです');
+VALUES (2, 'セレススキー場', 'セレス運営のスキー場です');
+VALUES (3, 'セレスフェス', 'セレス主催のフェスイベントです');
+VALUES (4, 'セレスコンサート', 'セレス主催のコンサートです');
+VALUES (5, 'セレスプール', 'セレス運営のプールです');
