@@ -9,7 +9,7 @@ type UserType = {
 };
 const users = ref<UserType[]>([]);
 
-
+//ここでgetメソッドを使うことで要求方法をGETにできる
 $httpClient.get("/sample/users")
   .then((res) => {
     users.value = res.data;
