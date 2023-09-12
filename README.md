@@ -1,4 +1,4 @@
-# SpringBoot 3 Nuxt3 Sample Project on Gitpod
+ SpringBoot 3 Nuxt3 Sample Project on Gitpod
 
 # 環境
 - Backend
