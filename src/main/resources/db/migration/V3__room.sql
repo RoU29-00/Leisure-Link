@@ -5,8 +5,8 @@ CREATE TABLE `room`
     `name`         varchar(32)   NOT NULL COMMENT 'イベント名',
     `date`         date          NOT NULL COMMENT '日時',
     `participants` varchar(32)   NOT NULL COMMENT '参加人数',
-    `leader`       VARCHAR(32)   NOT NULL COMMENT '主催者',
-    `explanation`  VARCHAR(1024) NOT NULL COMMENT '説明',
+    `leader`       varchar(32)   NOT NULL COMMENT '主催者',
+    `explanation`  varchar(1024) NOT NULL COMENT '説明',
     `created_at` datetime     NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '作成日',
     `updated_at` datetime     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新日時',
 
