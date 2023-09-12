@@ -1,5 +1,6 @@
 package com.example.demo.controller.sample;
 
+
 import com.example.demo.dto.RoomDto;
 import com.example.demo.repository.Entity.RoomEntity;
 import com.example.demo.repository.RoomRepository;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("sample-authenticated/room")
 @RestController
 public class SampleAuthenticatedRoomController {
+
 
 
     private final RoomRepository roomRepository;

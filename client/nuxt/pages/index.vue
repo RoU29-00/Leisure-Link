@@ -2,30 +2,34 @@
 
 const { $httpClient } = useNuxtApp()
 
-type UserType = {
-  userId: number;
-  name: string;
-  email: string;
-};
-const users = ref<UserType[]>([]);
+const router = useRouter()
 
-//ここでgetメソッドを使うことで要求方法をGETにできる
-$httpClient.get("/sample/users")
-  .then((res) => {
-    users.value = res.data;
+const inputForm = reactive({
+  email: "labol@example.com",
+  password: "password",
+})
+
+const login = () => {
+  const params = new URLSearchParams();
+  params.append("username", inputForm.email)
+  params.append("password", inputForm.password)
+
+  $httpClient.post('/api/login', params).then((_) => {
+    router.push('/home')
   })
-  .catch((_) => {});
+}
 
 </script>
 <template>
+  <h1>Login</h1>
   <div>
-    <h1>Top</h1>
-    <div>
-      <ul>
-        <li v-for="user in users">
-          {{ user.userId }}/{{ user.name }}/{{ user.email }}
-        </li>
-      </ul>
-    </div>
+    <input type="email" v-model="inputForm.email">
+    <input type="password" v-model="inputForm.password">
+    <button @click="login()">login</button>
+  </div>
+  <div>
+    <p>
+      新規登録は<a href="/createAccount">こちら</a>
+    </p>
   </div>
 </template>
