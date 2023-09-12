@@ -14,11 +14,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
 import java.util.Optional;
 
 @RequestMapping("sample-authenticated/user")
 @RestController
 public class SampleAuthenticatedUserController {
+
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
@@ -34,7 +36,9 @@ public class SampleAuthenticatedUserController {
         return new UserViewModel(
                 userEntity.getUserId(),
                 userEntity.getName(),
-                userEntity.getEmail()
+                userEntity.getEmail(),
+                userEntity.getBirthday(),
+                userEntity.getSex()
         );
     }
 
@@ -65,6 +69,6 @@ public class SampleAuthenticatedUserController {
         userRepository.deleteById(userCredential.getUserId());
     }
 
-    public record UserViewModel(Long userId, String name, String email) {
+    public record UserViewModel(Long userId, String name, String email, Date birthday, String sex) {
     }
 }
