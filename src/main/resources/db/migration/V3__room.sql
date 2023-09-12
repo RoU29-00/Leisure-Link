@@ -7,6 +7,7 @@ CREATE TABLE `room`
     `participants` varchar(32)   NOT NULL COMMENT '参加人数',
     `leader`       bigint unsigned NOT NULL COMMENT '主催者',
     `explanation`  VARCHAR(1024) NOT NULL COMMENT '説明',
+
     `created_at` datetime     NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '作成日',
     `updated_at` datetime     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新日時',
 

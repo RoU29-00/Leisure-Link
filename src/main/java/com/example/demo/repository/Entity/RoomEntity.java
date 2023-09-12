@@ -29,7 +29,7 @@ public class RoomEntity {
     private int participants;
 
     @Column(name = "leader")
-    private String leader;
+    private int leader;
 
     @Column(name = "explanation")
     private String explanation;
@@ -46,7 +46,7 @@ public class RoomEntity {
         return participants;
     }
 
-    public String getLeader() {
+    public int getLeader() {
         return leader;
     }
 
@@ -66,7 +66,11 @@ public class RoomEntity {
         this.participants = participants;
     }
 
-    public void setLeader(String leader) {
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public void setLeader(int leader) {
         this.leader = leader;
     }
 
