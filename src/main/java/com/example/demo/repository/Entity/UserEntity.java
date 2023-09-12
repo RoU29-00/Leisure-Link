@@ -26,6 +26,9 @@ public class UserEntity {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "sex")
+    private String sex;
+
     public Long getUserId() {
         return userId;
     }
@@ -54,7 +57,15 @@ public class UserEntity {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassword(String sex) {
+        this.sex = sex;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 }
