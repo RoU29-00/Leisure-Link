@@ -38,7 +38,8 @@ public class SampleAuthenticatedUserController {
                 userEntity.getName(),
                 userEntity.getEmail(),
                 userEntity.getBirthday(),
-                userEntity.getSex()
+                userEntity.getSex(),
+                userEntity.getLine()
         );
     }
 
@@ -46,6 +47,7 @@ public class SampleAuthenticatedUserController {
     public void addUser(@RequestBody UserDto userDto) {
         var userEntity = new UserEntity();
         userEntity.setName(userDto.name());
+        userEntity.setLine(userDto.line());
         userEntity.setBirthday(userDto.birthday());
         userEntity.setSex(userDto.sex());
         userEntity.setEmail(userDto.email());
@@ -69,6 +71,6 @@ public class SampleAuthenticatedUserController {
         userRepository.deleteById(userCredential.getUserId());
     }
 
-    public record UserViewModel(Long userId, String name, String email, Date birthday, String sex) {
+    public record UserViewModel(Long userId, String name, String email, Date birthday, String sex,String line) {
     }
 }
