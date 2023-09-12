@@ -3,7 +3,9 @@ package com.example.demo.controller.sample;
 
 import com.example.demo.dto.RoomAndReplyDto;
 import com.example.demo.dto.RoomDto;
+import com.example.demo.repository.Entity.RoomAndReplyEntity;
 import com.example.demo.repository.Entity.RoomEntity;
+import com.example.demo.repository.RoomAndReplyRepository;
 import com.example.demo.repository.RoomRepository;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,9 +30,9 @@ public class SampleAuthenticatedRoomAndReplyController {
 
     @PostMapping
     public void addRoomAndReply(@RequestBody RoomAndReplyDto roomAndReplyDto) {
-        var roomEntity = new RoomEntity();
-        roomEntity.setRoomId(roomAndReplyDto.room_id());
-        roomEntity.setDate(roomAndReplyDto.user_id());
+        var roomAndReplyEntity = new RoomAndReplyEntity();
+        roomAndReplyEntity.setRoomId(roomAndReplyDto.room_id());
+        roomAndReplyEntity.setUserId(roomAndReplyDto.user_id());
         roomAndReplyRepository.save(roomAndReplyEntity);
     }
 
