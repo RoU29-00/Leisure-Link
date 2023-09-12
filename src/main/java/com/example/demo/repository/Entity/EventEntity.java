@@ -36,11 +36,11 @@ public class EventEntity {
         this.name = name;
     }
 
-    public String getEmail() {
+    public String getExplanation() {
         return explanation;
     }
 
-    public void setEmail(String email) {
+    public void setExplanation(String explanation) {
         this.explanation = explanation;
     }
 }
