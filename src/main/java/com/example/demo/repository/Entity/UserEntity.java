@@ -8,6 +8,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 
+import java.util.Date;
+
 @Entity
 @Table(name = "user")
 public class UserEntity {
@@ -28,6 +30,9 @@ public class UserEntity {
 
     @Column(name = "sex")
     private String sex;
+
+    @Column(name = "birthday")
+    private Date birthday;
 
     public Long getUserId() {
         return userId;
@@ -53,6 +58,8 @@ public class UserEntity {
         this.email = email;
     }
 
+
+
     public String getPassword() {
         return password;
     }
@@ -67,5 +74,13 @@ public class UserEntity {
 
     public void setSex(String sex) {
         this.sex = sex;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
 }
