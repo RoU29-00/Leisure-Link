@@ -34,6 +34,9 @@ public class UserEntity {
     @Column(name = "birthday")
     private Date birthday;
 
+    @Column(name = "line")
+    private String line;
+
     public Long getUserId() {
         return userId;
     }
@@ -58,8 +61,6 @@ public class UserEntity {
         this.email = email;
     }
 
-
-
     public String getPassword() {
         return password;
     }
@@ -83,4 +84,8 @@ public class UserEntity {
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
+
+    public String getLine() { return line; }
+
+    public void setLine(String line) { this.line = line; }
 }
