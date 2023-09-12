@@ -42,9 +42,10 @@ public class SampleAuthenticatedUserController {
     public void addUser(@RequestBody UserDto userDto) {
         var userEntity = new UserEntity();
         userEntity.setName(userDto.name());
+        //userEntity.setDate(userDto.)
+        userEntity.setSex(userDto.sex());
         userEntity.setEmail(userDto.email());
         userEntity.setPassword(this.passwordEncoder.encode(userDto.password()));
-
         userRepository.save(userEntity);
     }
 
