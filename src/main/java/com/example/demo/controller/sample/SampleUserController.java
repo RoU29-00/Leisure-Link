@@ -37,7 +37,7 @@ public class SampleUserController {
         return this.userRepository.findAll();
     }
 
-    /*Postの　"sample/users/inu"*/
+    /*Postの　"sample/users/inu"*////
     @PostMapping("inu")
     public List<UserEntity> getUsersInu() {
         return this.userRepository.findAll();
