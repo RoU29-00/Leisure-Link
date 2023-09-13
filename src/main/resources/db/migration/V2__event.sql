@@ -9,8 +9,7 @@ CREATE TABLE `event`
 ) ENGINE=InnoDB COMMENT='イベント';
 
 INSERT INTO `event` (`event_id`, `name`, `explanation`)
-VALUES (1, 'セレスライブイベント', 'セレスイベントです');
-VALUES (2, 'セレススキー場', 'セレス運営のスキー場です');
-VALUES (3, 'セレスフェス', 'セレス主催のフェスイベントです');
-VALUES (4, 'セレスコンサート', 'セレス主催のコンサートです');
-VALUES (5, 'セレスプール', 'セレス運営のプールです');
+VALUES (1, 'セレフェス', '株式会社セレス主催のライブイベントです!この夏最後の思い出を私たちと過ごしませんか？');
+VALUES (2, '瀬例洲山スキー場', '夏はハイキング!冬はスキー!国内最大級のゲレンデを誇る瀬例洲山スキー場です。初心者も上級者も大歓迎!');
+VALUES (3, 'HACK'n'ROLL', 'ROCKBAND +＋CELES＋+ 20th Anniversary Live Event');
+VALUES (4, 'マーキュリープール', '子連れ様大歓迎!リニューアルオープンしたマーキュリープールで目いっぱい遊ぼう！');
