@@ -59,7 +59,8 @@ const addUser = () => {
   <body>
   <div class="container mt-5">
     <div class="text-center">
-      <h1>:link:</h1>
+      <img src="http://drive.google.com/uc?export=view&id=1f_Y-HQsYWqoc-IRDdoqCA_NegDm2im5K" alt="logo"
+           class="mb-4">
       <h1>Leisure Link アカウントを作成</h1>
     </div>
     <div>
