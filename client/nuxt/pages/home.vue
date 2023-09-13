@@ -44,8 +44,12 @@ const RoomGo = () => {
 
   <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;">
     <form action="//data_action()" method="post">
-      <p>場所選択をしてください</p>
       <nuxt-link to="/" class="btn btn-danger">ログアウト</nuxt-link>
+      <br>
+      <br>
+      <p>以下の中から場所選択をしてください</p>
+
+
     </form>
     <br>
   </div>
@@ -58,7 +62,7 @@ const RoomGo = () => {
     <div class="card-body">
       <h5 class="card-title">{{ e.name }}</h5>
       <p class="card-text">{{ e.explanation }}</p>
-      <nuxt-link to="/room" class="btn btn-primary">Go</nuxt-link>
+      <nuxt-link to="/room" class="btn btn-primary">仲間を探しに行く</nuxt-link>
     </div>
     </div>
   </div>
