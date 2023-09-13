@@ -1,7 +1,10 @@
 <script setup lang="ts">
 
-
 const { $httpClient } = useNuxtApp()
+
+const router = useRouter()
+
+
 
 type EventEntity = {
   name: string;
@@ -16,6 +19,15 @@ $httpClient.get("/sample/events")
     event.value = res.data;
   })
   .catch((_) => {});
+
+const inputForm = reactive({
+  email: "labol@example.com",
+  password: "password",
+})
+
+const RoomGo = () => {
+    router.push('/room');
+  }
 
 
 </script>
@@ -47,7 +59,7 @@ $httpClient.get("/sample/events")
     <div class="card-body">
       <h5 class="card-title">{{ e.name }}</h5>
       <p class="card-text">{{ e.explanation }}</p>
-      <a href="" class="btn btn-primary" @click="room()">GO</a>
+      <nuxt-link to="/room" class="btn btn-primary">Go</nuxt-link>
     </div>
     </div>
   </div>
