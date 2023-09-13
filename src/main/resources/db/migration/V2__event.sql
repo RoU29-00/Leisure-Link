@@ -17,3 +17,5 @@ INSERT INTO `event` (`event_id`, `name`, `explanation`)
 VALUES (3, 'HACK'n'ROLL', 'ROCKBAND +＋CELES＋+ 20th Anniversary Live Event');
 INSERT INTO `event` (`event_id`, `name`, `explanation`)
 VALUES (4, 'マーキュリープール', '子連れ様大歓迎!リニューアルオープンしたマーキュリープールで目いっぱい遊ぼう！');
+INSERT INTO `event` (`event_id`, `name`, `explanation`)
+VALUES (5, '優勝キャンプ場', '穏やかな森の雰囲気に囲まれて優雅なひと時を・・・');
