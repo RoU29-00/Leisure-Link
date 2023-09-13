@@ -23,7 +23,7 @@ public class RoomEntity {
     private String name;
 
     @Column(name = "date")
-    private Date date;
+    private String date;
 
     @Column(name = "participants")
     private int participants;
@@ -66,7 +66,7 @@ public class RoomEntity {
         this.participants = participants;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

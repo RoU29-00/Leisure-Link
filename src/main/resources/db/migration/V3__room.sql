@@ -3,7 +3,7 @@ CREATE TABLE `room`
 
     `room_id`      bigint unsigned NOT NULL AUTO_INCREMENT COMMENT 'ルームID',
     `name`         varchar(32)   NOT NULL COMMENT 'イベント名',
-    `date`         date          NOT NULL COMMENT '日時',
+    `date`         varchar(32)          NOT NULL COMMENT '日時',
     `participants` varchar(32)   NOT NULL COMMENT '参加人数',
     `leader`       bigint unsigned NOT NULL COMMENT '主催者',
     `explanation`  VARCHAR(1024) NOT NULL COMMENT '説明',
