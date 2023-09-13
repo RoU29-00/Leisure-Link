@@ -20,6 +20,7 @@ const login = () => {
 }
 
 </script>
+
 <template>
   <h1 class="d-flex justify-content-center">ログイン</h1>
   <p class="d-flex justify-content-center">お客様の Leisure Link アカウントを使用</p>

@@ -54,6 +54,8 @@ $httpClient.get("/sample/events")
   </html>
   </template>
 
+
+
 <style scoped>
 /* リストの黒点を非表示にするスタイル */
 ul {
@@ -68,4 +70,3 @@ clickable {
 
 
 </style>
-
