@@ -42,6 +42,7 @@ public class SpringSecurityConfig {
     private static final String[] PUBLIC_ENDPOINTS = {
             "/",
             "/sample/**",
+            "/sample-authenticated/user",
     };
 
     public SpringSecurityConfig(CustomUserDetailService customUserDetailService, CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler, CustomAuthenticationFailureHandler customAuthenticationFailureHandler) {
