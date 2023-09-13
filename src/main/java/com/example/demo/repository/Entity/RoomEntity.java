@@ -46,6 +46,10 @@ public class RoomEntity {
         return participants;
     }
 
+    public String getDate() {
+        return date;
+    }
+
     public Long getLeader() {
         return leader;
     }
