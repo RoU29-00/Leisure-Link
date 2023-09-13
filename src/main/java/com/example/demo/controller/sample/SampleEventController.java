@@ -4,10 +4,7 @@ import com.example.demo.repository.Entity.EventEntity;
 import com.example.demo.repository.Entity.UserEntity;
 import com.example.demo.repository.EventRepository;
 import com.example.demo.repository.UserRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,6 +22,11 @@ public class SampleEventController {
     @GetMapping
     public List<EventEntity> getEvents() {
         return this.eventRepository.findAll();
+    }
+
+    @GetMapping("search")
+    public List<EventEntity> getEventsByName(@RequestParam String name) {
+        return this.eventRepository.searchEvent(name);
     }
 
 

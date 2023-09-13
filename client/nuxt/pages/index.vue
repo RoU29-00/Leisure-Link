@@ -21,15 +21,21 @@ const login = () => {
 
 </script>
 <template>
-  <h1>Login</h1>
+  <h1 class="d-flex justify-content-center">ログイン</h1>
+  <p class="d-flex justify-content-center">お客様の Leisure Link アカウントを使用</p>
   <div>
-    <input type="email" v-model="inputForm.email">
-    <input type="password" v-model="inputForm.password">
-    <button @click="login()">login</button>
-  </div>
-  <div>
-    <p>
-      新規登録は<a href="/createAccount">こちら</a>
-    </p>
+    <div>
+      <input type="email" class="form-control mb-2 mr-sm-2" placeholder="メールアドレス" v-model="inputForm.email">
+    </div>
+    <div>
+      <input type="password" class="form-control mb-2 mr-sm-2" placeholder="パスワード入力" v-model="inputForm.password">
+    </div>
+    <div class="form-check mb-2 mr-sm-2"><input class="form-check-input" type="checkbox" id="inlineFormCheck">
+      <label class="form-check-label" for="inlineFormCheck">パスワードを保存</label>
+    </div>
+    <div class="position-relative">
+      <button type="submit" class="btn btn-primary mb-2" @click="login()">次へ</button>
+      <a href="/createAccount" class="d-flex justify-content-center">アカウント作成</a>
+    </div>
   </div>
 </template>

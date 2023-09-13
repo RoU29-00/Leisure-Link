@@ -10,7 +10,11 @@ CREATE TABLE `event`
 
 INSERT INTO `event` (`event_id`, `name`, `explanation`)
 VALUES (1, 'セレスライブイベント', 'セレスイベントです');
+INSERT INTO `event` (`event_id`, `name`, `explanation`)
 VALUES (2, 'セレススキー場', 'セレス運営のスキー場です');
+INSERT INTO `event` (`event_id`, `name`, `explanation`)
 VALUES (3, 'セレスフェス', 'セレス主催のフェスイベントです');
+INSERT INTO `event` (`event_id`, `name`, `explanation`)
 VALUES (4, 'セレスコンサート', 'セレス主催のコンサートです');
+INSERT INTO `event` (`event_id`, `name`, `explanation`)
 VALUES (5, 'セレスプール', 'セレス運営のプールです');
