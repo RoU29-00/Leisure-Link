@@ -42,17 +42,20 @@ $httpClient.get("/sample/events")
   <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;">
 
   </div>
-
+  <div class="row">
   <div class="card" style="width: 18rem;" v-for="e in event">
     <div class="card-body">
       <h5 class="card-title">{{ e.name }}</h5>
       <p class="card-text">{{ e.explanation }}</p>
-      <a href="" class="btn btn-primary">GO</a>
+      <a href="" class="btn btn-primary" @click="room()">GO</a>
+    </div>
     </div>
   </div>
 
   </html>
   </template>
+
+
 
 <style scoped>
 /* リストの黒点を非表示にするスタイル */
@@ -68,4 +71,3 @@ clickable {
 
 
 </style>
-

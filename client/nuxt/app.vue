@@ -1,10 +1,11 @@
-<script>
+<script setup lang="ts">
 
 const { $httpClient } = useNuxtApp()
 
 type EventEntity = {
   name: string;
   explanation: string;
+  eventId: number;
 };
 const event = ref<EventEntity[]>([]);
 
@@ -26,16 +27,16 @@ $httpClient.get("/sample/events")
     <nuxt-link to="/createAccount">createAccount</nuxt-link>/
     <nuxt-link to="/home">home</nuxt-link>/
     <nuxt-link to="/createRecruit">createRecruit</nuxt-link>/
-    <nuxt-link to="/board">board</nuxt-link>/
+    <nuxt-link to="/room">room</nuxt-link>/
 
-    <div v-for="e in event">
-    <nuxt-link :to="'/' + /board">{{ e.eventId }}</nuxt-link>
-    </div>
+
     <div class="m-5">
       <!-- <NuxtPage /> -->
       <div class="btn btn-success">Success</div>
       <div class="btn btn-danger">Danger</div>
       <div class="btn btn-warning">Warning</div>
     </div>
+    <NuxtPage></NuxtPage>
+
   </div>
 </template>
