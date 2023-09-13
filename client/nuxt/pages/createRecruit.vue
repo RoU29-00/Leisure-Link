@@ -18,16 +18,25 @@ const RoomCreate = reactive({
 const RoomCreates = () => {
 
 
-  $httpClient.post("/sample/rooms", RoomCreate).then((_)=> {
-    RoomCreate.RoomId = ""
-        RoomCreate.Name = ""
-        RoomCreate.Date = ""
-        RoomCreate.Participants = ""
-        RoomCreate.Leader = ""
-        RoomCreate.Explanation = ""
+  $httpClient
+      .post("/sample/rooms", RoomCreate)
+      .then(() => {
+        // リクエストが正常に終了した場合の処理
+        RoomCreate.RoomId = "";
+        RoomCreate.Name = "";
+        RoomCreate.Date = "";
+        RoomCreate.Participants = "";
+        RoomCreate.Leader = "";
+        RoomCreate.Explanation = "";
 
+        window.alert("ルームを作成しました");
+      })
+      .catch((error) => {
+        // エラーハンドリング
+        console.error("エラー:", error);
+        window.alert("ルームの作成に失敗しました");
+      });
 
-  });
 };
 
 </script>
@@ -69,6 +78,7 @@ const RoomCreates = () => {
         </div>
         <div class="text-center">
           <button class="btn btn-primary" @click="RoomCreates()">公開</button>
+          <nuxt-link to="/room" class="btn btn-primary">戻る</nuxt-link>
         </div>
       </div>
     </div>
