@@ -19,7 +19,7 @@ const rooms = ref<Rooms[]>([]);
 
 $httpClient.get("/sample/rooms")
     .then((res) => {
-      rooms.value = res.data;
+      rooms.value = res.data.filter((r)=>r.name == "セレフェス");
     })
     .catch((_) => {});
 
@@ -29,7 +29,9 @@ const inputForm = reactive({
 })
 
 
-
+const info = () => {
+  window.alert("参加リクエストを送信しました");
+  }
 
 
 
@@ -45,15 +47,15 @@ const inputForm = reactive({
 
   </head>
   <body>
-  <div class="card" style="border-left-width: 50px;padding-right: 0px;border-right-width: 50px;border-top-width: 50px;border-bottom-width: 50px;">
+  <div class="card">
     <div class="card-header">
       東京都
     </div>
     <div class="card-body">
-      <h5 class="card-title">セレスイベント</h5>
+      <h5 class="card-title">セレスフェス</h5>
       <p class="card-text">セレス主催のイベント一覧</p>
       <nuxt-link to="/createRecruit" class="btn btn-primary">createRecruit</nuxt-link>
-
+      <nuxt-link to="/home" class="btn btn-primary">homeへ戻る</nuxt-link>
     </div>
   </div>
 
@@ -66,24 +68,24 @@ const inputForm = reactive({
         <p class="card-text">日にち：{{ r.date }}</p>
         <p class="card-text">参加人数：{{ r.participants }}</p>
 
-        <p class="card-text">主催者：
+        <p class="card-text">
           <div v-if = "r.leader == 1">
-            SUZUKI
+        主催者：SUZUKI
           </div>
           <div v-if = "r.leader == 2">
-            やまだフミ
+            主催者：やまだフミ
           </div>
           <div v-if = "r.leader == 3">
-            松本です
+            主催者：松本です
           </div>
           <div v-if = "r.leader == 4">
-            ハリボテ太郎
+            主催者：ハリボテ太郎
           </div>
         </p>
 
         <p class="card-text">{{ r.explanation }}</p>
         <p class="card-text">RoomId:{{ r.roomId }}</p>
-        <a href="" class="btn btn-primary">参加希望をリクエスト送る</a>
+        <p class="btn btn-primary" @click="info()">参加希望をリクエスト送る</p>
       </div>
     </div>
   </div>
@@ -91,3 +93,11 @@ const inputForm = reactive({
   </body>
   </html>
 </template>
+
+<style scoped>
+
+.card-body {
+  border-left-width: 50px;padding-right: 0px;border-right-width: 50px;border-top-width: 50px;border-bottom-width: 50px;
+}
+
+</style>

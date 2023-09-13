@@ -44,9 +44,8 @@ const RoomGo = () => {
 
   <div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333;">
     <form action="//data_action()" method="post">
-      <p>検索したいキーワードを入力してください。</p>
-      <input type="search" name="search" placeholder="キーワードを入力">
-      <input type="submit" name="submit" value="検索">
+      <p>場所選択をしてください</p>
+      <nuxt-link to="/" class="btn btn-danger">ログアウト</nuxt-link>
     </form>
     <br>
   </div>

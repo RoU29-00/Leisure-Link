@@ -32,19 +32,30 @@ const addUser = () => {
     if (elementToToggle) {
       // 'elementToToggle'がnullでないことを確認し、存在する場合のみ操作します
       elementToToggle.style.visibility = "visible";
+
+      return
     }
 
   }
 
 
-  $httpClient.post("/sample-authenticated/user", userCreationForm).then((_)=> {
-    userCreationForm.name = ""
-    userCreationForm.birthday = ""
-    userCreationForm.sex = ""
-    userCreationForm.email = ""
-    userCreationForm.line = ""
-    userCreationForm.password = ""
-  });
+  $httpClient
+      .post("/sample-authenticated/user", userCreationForm)
+      .then(() => {
+        // リクエストが正常に終了した場合の処理
+        userCreationForm.name = "";
+        userCreationForm.birthday = "";
+        userCreationForm.sex = "";
+        userCreationForm.email = "";
+        userCreationForm.line = "";
+        userCreationForm.password = "";
+
+        window.alert("アカウントを追加しました");
+      })
+      .catch((error) => {
+        console.error("エラー:", error);
+        window.alert("失敗しました");
+      });
 };
 
 </script>
@@ -101,6 +112,9 @@ const addUser = () => {
           <p>パスワードが違います。</p>
         </div>
         <button class="btn btn-primary" @click="addUser()">保存</button>
+      <br>
+      <br>
+        <nuxt-link to="/" class="btn btn-primary">戻る</nuxt-link>
 
     </div>
   </div>
