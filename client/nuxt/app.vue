@@ -22,12 +22,12 @@ $httpClient.get("/sample/events")
 
 
 <template>
-  <div>
-    <nuxt-link to="/">Login</nuxt-link>
-    <nuxt-link to="/createAccount">createAccount</nuxt-link>
-    <nuxt-link to="/home">home</nuxt-link>
-    <nuxt-link to="/createRecruit">createRecruit</nuxt-link>
-    <nuxt-link to="/room">room</nuxt-link>
+  <div class="lost">
+    <nuxt-link to="/"></nuxt-link>
+    <nuxt-link to="/createAccount"></nuxt-link>
+    <nuxt-link to="/home"></nuxt-link>
+    <nuxt-link to="/createRecruit"></nuxt-link>
+    <nuxt-link to="/room"></nuxt-link>
 
     <NuxtPage></NuxtPage>
 
