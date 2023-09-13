@@ -65,7 +65,22 @@ const inputForm = reactive({
         <h5 class="card-title">{{ r.name }}</h5>
         <p class="card-text">日にち：{{ r.date }}</p>
         <p class="card-text">参加人数：{{ r.participants }}</p>
-        <p class="card-text">主催者：{{ r.leader }}</p>
+
+        <p class="card-text">主催者：
+          <div v-if = "r.leader == 1">
+            SUZUKI
+          </div>
+          <div v-if = "r.leader == 2">
+            やまだフミ
+          </div>
+          <div v-if = "r.leader == 3">
+            松本です
+          </div>
+          <div v-if = "r.leader == 4">
+            ハリボテ太郎
+          </div>
+        </p>
+
         <p class="card-text">{{ r.explanation }}</p>
         <p class="card-text">RoomId:{{ r.roomId }}</p>
         <a href="" class="btn btn-primary">参加希望をリクエスト送る</a>

@@ -15,3 +15,9 @@ CREATE TABLE `user`
 
 INSERT INTO `user` (`user_id`, `name`, `email`, `password`,`sex`,`birthday`,`line`, `created_at`, `updated_at`)
 VALUES (1, 'labol', 'labol@example.com', '{bcrypt}$2a$10$qsp2hyF8ed/12BSTWoKzkOmW/ibvjaqGPjCQ10Vllx3JdsWKyKUmu','男性','2002-11-11','lineid','2023-08-17 07:04:10', '2023-08-17 07:04:10');
+INSERT INTO `user` (`user_id`, `name`, `email`, `password`,`sex`,`birthday`,`line`, `created_at`, `updated_at`)
+VALUES (2, 'one', 'one@example.com', '{bcrypt}$2a$10$qsp2hyF8ed/12BSTWoKzkOmW/ibvjaqGPjCQ10Vllx3JdsWKyKUmu','男性','2002-11-11','lineid1','2023-08-17 07:04:10', '2023-08-17 07:04:10');
+INSERT INTO `user` (`user_id`, `name`, `email`, `password`,`sex`,`birthday`,`line`, `created_at`, `updated_at`)
+VALUES (3, 'two', 'two@example.com', '{bcrypt}$2a$10$qsp2hyF8ed/12BSTWoKzkOmW/ibvjaqGPjCQ10Vllx3JdsWKyKUmu','女性','2003-11-11','lineid2','2023-08-17 07:04:10', '2023-08-17 07:04:10');
+INSERT INTO `user` (`user_id`, `name`, `email`, `password`,`sex`,`birthday`,`line`, `created_at`, `updated_at`)
+VALUES (4, 'three', 'three@example.com', '{bcrypt}$2a$10$qsp2hyF8ed/12BSTWoKzkOmW/ibvjaqGPjCQ10Vllx3JdsWKyKUmu','女性','2004-11-11','lineid3','2023-08-17 07:04:10', '2023-08-17 07:04:10');
