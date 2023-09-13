@@ -7,11 +7,11 @@ const router = useRouter();
 
 
 const RoomCreate = reactive({
-  RoomId: "",
+  RoomId: "20",
   Name: "",
   Date: "",
   Participants: "",
-  Leader: "",
+  Leader: "1",
   Explanation:"",
 
 });
@@ -20,22 +20,34 @@ const RoomCreates = () => {
 
   $httpClient
       .post("/sample/rooms", RoomCreate)
-      .then(() => {
-        // リクエストが正常に終了した場合の処理
-        RoomCreate.RoomId = "";
-        RoomCreate.Name = "";
-        RoomCreate.Date = "";
-        RoomCreate.Participants = "";
-        RoomCreate.Leader = "";
-        RoomCreate.Explanation = "";
+      .then((response) => {
+        if(RoomCreate.Name == "" )
+        {
+          window.alert("ルームの作成に失敗しました");
+          return
+        }
+        if (response.status === 200) {
+          // リクエストが正常に終了した場合の処理
+          RoomCreate.RoomId = "";
+          RoomCreate.Name = "";
+          RoomCreate.Date = "";
+          RoomCreate.Participants = "";
+          RoomCreate.Leader = "";
+          RoomCreate.Explanation = "";
 
-        window.alert("ルームを作成しました");
+          console.log("HTTPステータスコード 200: ルームを作成しました");
+          window.alert("ルームを作成しました");
+        } else {
+          console.error("HTTPステータスコード", response.status);
+          window.alert("ルームの作成に失敗しました");
+        }
       })
       .catch((error) => {
         // エラーハンドリング
         console.error("エラー:", error);
         window.alert("ルームの作成に失敗しました");
       });
+
 
 };
 
@@ -59,7 +71,7 @@ const RoomCreates = () => {
       <div class="col-md-6">
         <div class="mb-3">
           <label for="eventName" class="form-label">イベント名を入力してください</label>
-          <input type="text" class="form-control" id="eventName" placeholder="イベント名" v-model="RoomCreate.name">
+          <input type="text" class="form-control" id="eventName" placeholder="イベント名" v-model="RoomCreate.Name">
         </div>
         <div class="mb-3">
           <label for="eventDate" class="form-label">イベント開催日を入力してください</label>

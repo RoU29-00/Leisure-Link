@@ -109,7 +109,7 @@ const addUser = () => {
           <input type="password" class="form-control" id="conformPassword" placeholder="確認" v-model="conformPassword">
         </div>
         <div id="miss" style="visibility: hidden;">
-          <p>パスワードが違います。</p>
+          <p style="color: red;">パスワードが違います。</p>
         </div>
         <button class="btn btn-primary" @click="addUser()">保存</button>
       <br>

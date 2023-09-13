@@ -23,6 +23,7 @@ const login = () => {
   }).then(res => {
 if(!res.ok)
 {
+  window.alert("IDかPWが間違っています");
   return
 }
     console.log(res);

@@ -66,7 +66,7 @@ const info = () => {
       <div class="card-body">
         <h5 class="card-title">{{ r.name }}</h5>
         <p class="card-text">日にち：{{ r.date }}</p>
-        <p class="card-text">参加人数：{{ r.participants }}</p>
+        <p class="card-text">募集人数：{{ r.participants }}</p>
 
         <p class="card-text">
           <div v-if = "r.leader == 1">
