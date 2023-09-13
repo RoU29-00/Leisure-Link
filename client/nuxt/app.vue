@@ -27,6 +27,7 @@ $httpClient.get("/sample/events")
     <nuxt-link to="/createAccount">createAccount</nuxt-link>/
     <nuxt-link to="/home">home</nuxt-link>/
     <nuxt-link to="/createRecruit">createRecruit</nuxt-link>/
+    <nuxt-link to="/room">room</nuxt-link>/
 
 
     <div class="m-5">

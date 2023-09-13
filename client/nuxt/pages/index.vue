@@ -13,30 +13,59 @@ const login = () => {
   const params = new URLSearchParams();
   params.append("username", inputForm.email)
   params.append("password", inputForm.password)
+  console.log("AAA")
 
-  $httpClient.post('/api/login', params).then((_) => {
+  fetch('http://localhost:8080/api/login', {
+
+    credentials: 'include',
+    method: "POST",
+    body: params,
+  }).then(res => {
+
+    console.log(res);
     router.push('/home')
   })
 }
 
 </script>
-
 <template>
-  <h1 class="d-flex justify-content-center">ログイン</h1>
-  <p class="d-flex justify-content-center">お客様の Leisure Link アカウントを使用</p>
-  <div>
-    <div>
-      <input type="email" class="form-control mb-2 mr-sm-2" placeholder="メールアドレス" v-model="inputForm.email">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログイン</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@latest/dist/css/bootstrap.min.css">
+  </head>
+
+  <body>
+  <div class="container mt-5">
+    <div class="text-center">
+      <img src="http://drive.google.com/uc?export=view&id=1f_Y-HQsYWqoc-IRDdoqCA_NegDm2im5K" alt="logo"
+           class="mb-4">
+      <h1>ログイン</h1>
+      <p>お客様の Leisure Link アカウントを使用</p>
     </div>
-    <div>
-      <input type="password" class="form-control mb-2 mr-sm-2" placeholder="パスワード入力" v-model="inputForm.password">
-    </div>
-    <div class="form-check mb-2 mr-sm-2"><input class="form-check-input" type="checkbox" id="inlineFormCheck">
-      <label class="form-check-label" for="inlineFormCheck">パスワードを保存</label>
-    </div>
-    <div class="position-relative">
-      <button type="submit" class="btn btn-primary mb-2" @click="login()">次へ</button>
-      <a href="/createAccount" class="d-flex justify-content-center">アカウント作成</a>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">メールアドレス</label>
+        <input type="email" id="email" class="form-control" placeholder="メールアドレス" v-model="inputForm.email">
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">パスワード</label>
+        <input type="password" id="password" class="form-control" placeholder="パスワード入力"
+               v-model="inputForm.password">
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="inlineFormCheck">
+        <label class="form-check-label" for="inlineFormCheck">パスワードを保存</label>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary" @click="login()">次へ</button>
+      </div>
+
+    <div class="text-center mt-3">
+      <a href="/createAccount">アカウント作成</a>
     </div>
   </div>
+  </body>
+
 </template>
