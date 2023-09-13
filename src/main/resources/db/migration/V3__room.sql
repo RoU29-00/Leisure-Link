@@ -15,10 +15,10 @@ CREATE TABLE `room`
 ) ENGINE=InnoDB COMMENT='ユーザー';
 
 INSERT INTO `room` (`room_id`, `name`, `date`, `participants`,`leader`,`explanation`, `created_at`, `updated_at`)
-VALUES (1, 'ski', '2023-10-11', '4','4', 'みんなでスキー行きましょう!!初心者歓迎です!!','2023-08-17 07:04:10', '2023-08-18 07:04:10');
+VALUES (1, '瀬例洲山スキー場', '2023-10-11', '4','4', 'みんなでスキー行きましょう!!初心者歓迎です!!','2023-08-17 07:04:10', '2023-08-18 07:04:10');
 INSERT INTO `room` (`room_id`, `name`, `date`, `participants`,`leader`,`explanation`, `created_at`, `updated_at`)
-VALUES (2, 'live', '2023-08-22', '3','3', '一緒にロックなライブに行こうぜ!!','2023-08-17 07:04:10', '2023-08-18 07:04:10');
+VALUES (2, 'HACK''n''ROLL', '2023-08-22', '3','3', '一緒にロックなライブに行こうぜ!!','2023-08-17 07:04:10', '2023-08-18 07:04:10');
 INSERT INTO `room` (`room_id`, `name`, `date`, `participants`,`leader`,`explanation`, `created_at`, `updated_at`)
-VALUES (3, 'camp', '2023-06-22', '2','2', 'キャンプ仲間探してます!!!誰でも歓迎!!!','2023-08-17 07:04:10', '2023-08-18 07:04:10');
+VALUES (3, '優勝キャンプ場', '2023-06-22', '2','2', 'キャンプ仲間探してます!!!誰でも歓迎!!!','2023-08-17 07:04:10', '2023-08-18 07:04:10');
 INSERT INTO `room` (`room_id`, `name`, `date`, `participants`,`leader`,`explanation`, `created_at`, `updated_at`)
-VALUES (4, 'concert', '2023-11-21', '5','1', '一緒にコンサート行く人を探しています！','2023-08-17 07:04:10', '2023-08-18 07:04:10');
+VALUES (4, 'セレフェス', '2023-11-21', '5','1', '一緒にコンサート行く人を探しています！','2023-08-17 07:04:10', '2023-08-18 07:04:10');
