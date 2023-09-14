@@ -8,8 +8,8 @@ RUN npm run build
 
 # バックエンドビルドステージ
 FROM amazoncorretto:17 AS backend-build
-chmod +x gradlew
 WORKDIR /app
+COPY . .
 RUN ./gradlew build
 
 # 実行ステージ
