@@ -18,9 +18,7 @@ RUN npm run build
 FROM amazoncorretto:17-alpine
 WORKDIR /app
 # フロントエンドアプリケーションをコピー
-COPY --from=frontend-build /app/dist/ ./client/nuxt/
-# バックエンドアプリケーションをコピー
-COPY --from=backend-build /app/build/libs/demo.jar ./
+
 # Spring Bootアプリケーションのポートを設定
 EXPOSE 8080
 # アプリケーションを実行
