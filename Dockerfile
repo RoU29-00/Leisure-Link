@@ -1,10 +1,24 @@
-FROM amazoncorretto:17 AS build
-COPY ./ /home/app
-RUN cd /home/app && ./gradlew && ./gradlew bootRun
+# フロントエンドビルドステージ
+FROM node:14 AS frontend-build
+WORKDIR /app
+COPY client/nuxt/package*.json ./
+RUN npm install
+COPY client/nuxt/ ./
+RUN npm run build
 
-RUN cd /home/app/client/nuxt & npm install && npm run dev
+# バックエンドビルドステージ
+FROM amazoncorretto:17 AS backend-build
+WORKDIR /app
+RUN ./gradlew build
 
+# 実行ステージ
 FROM amazoncorretto:17-alpine
-COPY --from=build /home/app/build/libs/demo-0.0.1-SNAPSHOT.jar /usr/local/lib/demo.jar
+WORKDIR /app
+# フロントエンドアプリケーションをコピー
+COPY --from=frontend-build /app/dist/ ./client/nuxt/
+# バックエンドアプリケーションをコピー
+COPY --from=backend-build /app/build/libs/demo.jar ./
+# Spring Bootアプリケーションのポートを設定
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","-Dfile.encoding=UTF-8","/usr/local/lib/demo.jar"]
+# アプリケーションを実行
+CMD ["java", "-jar", "demo.jar"]
