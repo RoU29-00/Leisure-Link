@@ -1,6 +1,6 @@
 FROM amazoncorretto:17 AS build
 COPY ./ /home/app
-RUN cd /home/app
+RUN cd /gradle/wrapper
 RUN ./gradlew 
 RUN ./gradlew bootrun
 
