@@ -1,3 +1,10 @@
+# バックエンドビルドステージ
+FROM amazoncorretto:17 AS backend-build
+WORKDIR /app
+COPY . .
+RUN ./gradlew
+
+
 # フロントエンドビルドステージ
 FROM node:14 AS frontend-build
 WORKDIR /app
@@ -6,11 +13,6 @@ RUN npm install
 COPY client/nuxt/ ./
 RUN npm run build
 
-# バックエンドビルドステージ
-FROM amazoncorretto:17 AS backend-build
-WORKDIR /app
-COPY . .
-RUN ./gradlew build
 
 # 実行ステージ
 FROM amazoncorretto:17-alpine
